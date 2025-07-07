@@ -40,24 +40,27 @@ The model was trained on labeled resume data with the following steps:
 ---
 
 ## 📁 Project Structure
+
+```text
 Resume-Categorization/
-│
 ├── Application/
-│ ├── application.py # Streamlit interface
-│ ├── model_training.ipynb # Notebook for model training and evaluation
-│ ├── categorized_resumes/ # Output folder after classification
-│ ├── Resumes/ # Sample input resumes
+│   ├── application.py            # Streamlit interface
+│   ├── model_training.ipynb      # Notebook for model training and evaluation
+│   ├── categorized_resumes/      # Output folder after classification
+│   ├── Resumes/                  # Sample input resumes
 │
 ├── Weights/
-│ ├── model.pkl # Trained logistic regression model
-│ ├── tfidf.pkl # TF-IDF vectorizer
+│   ├── model.pkl                 # Trained logistic regression model
+│   ├── tfidf.pkl                 # TF-IDF vectorizer
 │
 ├── screenshots/
-│ ├── app_home.png
-│ ├── app_result.png
+│   ├── app_home.png              # Screenshot of home screen
+│   ├── app_result.png            # Screenshot of output result
 │
-├── requirements.txt # Python dependencies
-└── README.md # Project documentation
+├── requirements.txt              # Python dependencies
+└── README.md                     # Project documentation
+
+```
 
 ## ⚙️ Installation & Usage
 
