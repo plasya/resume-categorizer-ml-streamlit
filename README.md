@@ -1,69 +1,81 @@
-# 🧠 Resume Categorizer using Machine Learning
+# 📄 Resume Classifier Application
 
-A machine learning-based resume categorization system with a user-friendly Streamlit interface. Upload a resume (PDF/DOCX), and instantly see the predicted job category. Built to streamline recruitment by automating manual resume sorting.
+Categorize resumes into job roles using Machine Learning and NLP.
 
----
-
-## 📌 Project Overview
-
-This project leverages NLP and ML to categorize resumes into job profiles (e.g., Java Developer, Testing, HR). Designed to eliminate bias and save recruiters hours of manual scanning.
-
-Key objectives:
-- Reduce recruiter workload
-- Speed up candidate shortlisting
-- Maintain fairness via unbiased ML classification
+This project is a **Streamlit-based application** that allows users to upload PDF/DOCX resumes and automatically classifies them into job categories using a trained Logistic Regression model and TF-IDF vectorizer.
 
 ---
 
-## 💡 Features
+## 🧠 Model Overview
 
-- 📄 Upload resume (PDF/DOCX) via web UI
-- ⚙️ Preprocessing: Clean text, remove noise
-- 📊 ML Models: Logistic Regression, SVM, Random Forest
-- 📁 Dataset: Kaggle resume datasets (merged and balanced with SMOTE)
-- 📉 Analytics: Word clouds, category distributions, model comparison
-- 🧪 Evaluation: Accuracy, F1-score, confusion matrix
+The model was trained on labeled resume data with the following steps:
 
----
+- **Preprocessing**: Cleaned and normalized text
+- **Vectorization**: TF-IDF with `TfidfVectorizer`
+- **Classifier**: Logistic Regression
+- **Performance**: ~85% accuracy on validation set
 
-## 📷 Interface Preview
-
-> 🔧 Run `streamlit run application.py` to launch the UI
-
-### 1. 🔐 Upload Page
-![Upload Page](./screenshots/login.png)
-
-### 2. 📋 Categorization Output
-![User Dashboard](./screenshots/dashboard.png)
-
-### 3. 🧠 Admin Model Summary
-![Model Overview](./screenshots/loandetails.png)
+> 📊 Detailed metrics including classification report and confusion matrix are available in `Application/model_training.ipynb`.
 
 ---
 
-## 🔬 Model Performance
+## 🚀 Features
 
-| Model                 | Accuracy |
-|----------------------|----------|
-| Logistic Regression  | 87.48%   |
-| Random Forest        | 86.95%   |
-| SVC                  | 86.49%   |
-| KNN                  | 80.73%   |
-| Naive Bayes          | 73.25%   |
+- ✅ **Upload Resumes** in `.pdf` or `.docx` format
+- ✅ **Categorize** resumes into 25+ job roles (e.g., Java Developer, Data Scientist, HR, etc.)
+- ✅ **View and download results** as a CSV
+- ✅ **Automatic folder sorting** by predicted category
+- ✅ **Real-time interface** with Streamlit
 
 ---
 
-## 🧰 Tech Stack
+## 🖼️ Screenshots
 
-| Area          | Tools / Libraries                    |
-|---------------|---------------------------------------|
-| Web UI        | Streamlit                            |
-| ML            | scikit-learn, pandas, numpy           |
-| NLP           | NLTK, TF-IDF                         |
-| Visualization | seaborn, matplotlib                  |
-| Data Source   | Kaggle Resume Dataset                |
+### 🔹 App Homepage
+![App Home](./screenshots/app_home.png)
+
+### 🔹 After Resume Upload and Categorization
+![App Result](./screenshots/app_result.png)
 
 ---
 
-## 📁 Repository Structure
+## 📁 Project Structure
+Resume-Categorization/
+│
+├── Application/
+│ ├── application.py # Streamlit interface
+│ ├── model_training.ipynb # Notebook for model training and evaluation
+│ ├── categorized_resumes/ # Output folder after classification
+│ ├── Resumes/ # Sample input resumes
+│
+├── Weights/
+│ ├── model.pkl # Trained logistic regression model
+│ ├── tfidf.pkl # TF-IDF vectorizer
+│
+├── screenshots/
+│ ├── app_home.png
+│ ├── app_result.png
+│
+├── requirements.txt # Python dependencies
+└── README.md # Project documentation
 
+## ⚙️ Installation & Usage
+
+### 🔸 1. Install Requirements
+
+```bash
+pip install -r requirements.txt
+
+manual installation:
+pip install streamlit scikit-learn pandas python-docx pypdf
+```
+### 2. Run the Application
+```bash
+streamlit run Application/application.py
+```
+
+### 3. Upload Resumes
+- Upload one or more resumes (PDF/DOCX)
+- View predicted category
+- Download results as CSV
+- Categorized files will be saved to: categorized_resumes/<Job_Category>/
