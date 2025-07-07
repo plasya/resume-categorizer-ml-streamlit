@@ -32,9 +32,11 @@ The model was trained on labeled resume data with the following steps:
 ## 🖼️ Screenshots
 
 ### 🔹 App Homepage
+
 ![App Home](./screenshots/app_home.png)
 
 ### 🔹 After Resume Upload and Categorization
+
 ![App Result](./screenshots/app_result.png)
 
 ---
@@ -48,7 +50,7 @@ Resume-Categorization/
 │   ├── model_training.ipynb      # Notebook for model training and evaluation
 │   ├── categorized_resumes/      # Output folder after classification
 │   ├── Resumes/                  # Sample input resumes
-│
+│── Data
 ├── Weights/
 │   ├── model.pkl                 # Trained logistic regression model
 │   ├── tfidf.pkl                 # TF-IDF vectorizer
@@ -72,12 +74,15 @@ pip install -r requirements.txt
 manual installation:
 pip install streamlit scikit-learn pandas python-docx pypdf
 ```
+
 ### 2. Run the Application
+
 ```bash
 streamlit run Application/application.py
 ```
 
 ### 3. Upload Resumes
+
 - Upload one or more resumes (PDF/DOCX)
 - View predicted category
 - Download results as CSV
